@@ -1,22 +1,50 @@
 var btn = document.getElementById("btn");
-
-btn.onclick = function verificar(area){
-    var text = document.getElementById("area").value;
-        if(area.value!=""){
-            return btn.disabled = false;
-            alert(text);
-        }else{
-            return btn.disabled = true;
-            alert(text);
-        }
+var text = document.getElementById("area");
+text.onkeyup = function () {
+    if (text.value.length > 0) {
+        btn.disabled = false;
+    } else {
+        btn.disabled = true;
     }
-
-function erased(){
-    
+    btn.addEventListener("click", add);
 }
+function add() {
+    var lista = document.getElementById('add-list');
+    var listatrash = document.getElementById('trash');
+    var div = document.createElement("div");
+    lista.appendChild(div);
+    var checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    var span = document.createElement("span");
+    var work = document.createTextNode(text.value);
+    span.appendChild(work);
+    div.appendChild(checkbox);
+    div.appendChild(span);
+    var div1 = document.createElement('div');
+    var obj = {
+        tagain: '<a href="" >',
+        tagaend: '</a>',
+        trashi: '<i class="fa fa-trash-o" aria-hidden="true"></i>',
+    };
+    div1.innerHTML = obj.tagain + obj.trashi + obj.tagaend;
+    listatrash.appendChild(div1);
 
-function cross(){
-    
+    div1.onclick = function () {
+        this.parentNode.removeChild(this);
+        div.parentNode.removeChild(div);
+    }
+    if (lista.childElementCount > 0) {
+        checkbox.addEventListener("click", cross);
+    }
+}
+function cross(evt) {
+    var checkbox = evt.target;
+    var span = evt.target.parentNode.lastChild;
+    if (checkbox.checked) {
+        span.classList.add("cross");
+    } else {
+        span.classList.remove("cross");
+    }
 }
 
 

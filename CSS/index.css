@@ -1,0 +1,24 @@
+
+
+
+
+labe|l {
+	position: relative;
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	text-indent: 50px;
+	cursor: pointer;
+}
+
+.cross {
+	transition: all .15s ease;
+	content: '';
+	p|osition: absolute;
+	width: 0px;
+	height: 2px;
+	to|p: calc( 50% - 1px );
+	transition: all .15s cubic-bezier(.8,.1,.1,.8);
+    text-decoration: line-through;
+    color: #3d58eb;
+}
