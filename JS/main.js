@@ -32,6 +32,7 @@ function add() {
     div1.onclick = function () {
         this.parentNode.removeChild(this);
         div.parentNode.removeChild(div);
+        return false;
     }
     if (lista.childElementCount > 0) {
         checkbox.addEventListener("click", cross);
