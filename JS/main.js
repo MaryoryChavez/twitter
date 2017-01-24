@@ -22,7 +22,7 @@ function add() {
     div.appendChild(span);
     var div1 = document.createElement('div');
     var obj = {
-        tagain: '<a href="" >',
+        tagain: '<a href="#" class="list-group-item">',
         tagaend: '</a>',
         trashi: '<i class="fa fa-trash-o" aria-hidden="true"></i>',
     };
@@ -41,10 +41,16 @@ function add() {
 function cross(evt) {
     var checkbox = evt.target;
     var span = evt.target.parentNode.lastChild;
+    var div = evt.target.parentNode;
+    
+    //console.log(evt.target.parentNode);
     if (checkbox.checked) {
         span.classList.add("cross");
+        div.classList.add("backgr");
+        
     } else {
         span.classList.remove("cross");
+        div.classList.remove("backgr");
     }
 }
 
