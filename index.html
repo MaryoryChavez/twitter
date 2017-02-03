@@ -4,13 +4,60 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3d8cd0">
     <title>Twitter</title>
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 
 <body>
+
+<header>
+    <div class= "container">
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <h1 class="text-center">todo app</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="form">
+    <div>
+        <form action="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <textarea class="form-control" name="" id="area" rows="6" onkeyup="blocke()"></textarea>
+                        <button type="button" name="play" class="btn btn-primary btn-lg" id="btn" onclick="addWork()" disabled="true"><i class="fa fa-plus" aria-hidden="true"></i> Añadir tarea</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<section id="list">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+                <div id="add-list">
+                    <div class="col-sm-12 col-xs-12" id="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="JS/main.js"></script>
+</body>
+
+</html>
+
+
+<!-- 
     <header>
         <div class="container">
             <div class="row">
@@ -48,6 +95,4 @@
 
     </footer>
     <script src="JS/main.js"></script>
-</body>
-
-</html>
+--!>
